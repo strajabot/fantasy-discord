@@ -1,0 +1,5 @@
+/node_modules
+/dist
+.env
+ssh_key
+ssh_key.pub
