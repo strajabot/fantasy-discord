@@ -24,9 +24,13 @@
     "@types/uuid": "^8.3.1"
   },
   "scripts": {
-    "compile": "tsc",
-    "create_migrations": "typeorm migration:create",
-    "rc": "node ./registerCommands.js",
+    "compile": "tsc -p .",
+    "createMigrations": "typeorm migration:create",
+    "syncSchema": "typeorm schema:sync",
+    "getAppCommands": "node scripts/getAppCommands.js",
+    "getGuildCommands": "node scripts/getGuildCommands.js",
+    "reloadAppCommands": "node scripts/reloadAppCommands.js",
+    "reloadGuildCommands": "node scripts/reloadGuildCommands.js",
     "start": "node ."
   }
 }

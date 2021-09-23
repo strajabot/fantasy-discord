@@ -5,11 +5,17 @@ let config: Config
 export class Config {
     readonly environment: string
     readonly logLevel: string
+    readonly testGuild: string
     readonly discord: DiscordConfig
     readonly postgres: PostgresConfig     
     constructor(discord: DiscordConfig, postgres: PostgresConfig) {
         this.environment = process.env.NODE_ENV || "dev"
         this.logLevel = process.env.LOG_LEVEL || "info"
+        this.testGuild = process.env.TEST_GUILD || ""
+        if(this.environment == "dev" && this.testGuild == "") {
+            logger.error("Environment variable \"TEST_GUILD\" is required because \"NODE_ENV\" is \"dev\"")
+            process.exit()
+        }
         this.discord = discord
         this.postgres = postgres
     }

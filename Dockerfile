@@ -12,5 +12,5 @@ COPY . .
 RUN tsc
 CMD ./wait-for-postgres.sh \
         && typeorm schema:sync \
-        &&  yarn rc \ 
+        && yarn reloadGuildCommands \ 
         && node .

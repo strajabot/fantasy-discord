@@ -24,6 +24,7 @@ services:
     environment:
       - NODE_ENV=${NODE_ENV}
       - LOG_LEVEL=${LOG_LEVEL}
+      - TEST_GUILD=${TEST_GUILD}
       - DISCORD_TOKEN=${DISCORD_TOKEN}
       - DISCORD_ID=888963470601617409 
       - POSTGRES_HOST=postgres
