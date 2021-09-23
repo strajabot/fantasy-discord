@@ -23,6 +23,7 @@ services:
     restart: unless-stopped
     environment:
       - NODE_ENV=${NODE_ENV}
+      - NODE_FLAGS=--enable-source-maps
       - LOG_LEVEL=${LOG_LEVEL}
       - TEST_GUILD=${TEST_GUILD}
       - DISCORD_TOKEN=${DISCORD_TOKEN}
